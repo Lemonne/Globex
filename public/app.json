@@ -1,0 +1,6 @@
+{
+	"name": "Globex",
+	"desciption": "Heroku Lab stuff",
+	"repository": "https://github.com/lemmonne/Globex",
+	"keywords": ["node", "express", "static"]
+}
