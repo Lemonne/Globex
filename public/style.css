@@ -1,3 +1,31 @@
 body {
-   background-color:rgb(229,227,223);
+   background-color:rgb(122,48,67);
+}
+
+div#header {
+        padding: 30px;
+        background-image: url("dog.png");
+        border-bottom: 2px;
+        color: white;
+        text-shadow: black 0 -2px;
+}
+
+div#header p {
+	display: inline-block;
+}
+.title {
+	font-size: 200%;
+	font-weight: bold;
+}
+div#footer {
+	border-top: 2px solid #666;
+	padding: 30px;
+	color: white;
+}
+div#about {
+    opacity: 0;
+    transition: all 2s linear;
+}
+div#about.show {
+    opacity: 1;
 }
