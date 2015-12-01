@@ -140,10 +140,10 @@ function vizInit() {
     // 9/19/2015 Corrected typo
     // Make the initial query to get the whole Fusion table. The Fusion
     // table’s ID is listed in red.
-    var query = "SELECT Month, Year, AY, Sessions FROM 1b7tW8h_6l35B2Pj7DCwfjHjurWzRiI-KpuvHnOgb&pli=1#rows:id=1";
+    var query = "SELECT Year, AY, Course Level, Number of Students, Sessions FROM 1b7tW8h_6l35B2Pj7DCwfjHjurWzRiI-KpuvHnOgb";
 
     var opts = {sendMethod: 'auto'};
-    var queryObj = new google.visualization.Query('https://www.google.com/fusiontables/DataSource?docid=1b7tW8h_6l35B2Pj7DCwfjHjurWzRiI-KpuvHnOgb&pli=1#rows:id=1', opts);
+    var queryObj = new google.visualization.Query('https://www.google.com/fusiontables/DataSource?docid=1b7tW8h_6l35B2Pj7DCwfjHjurWzRiI-KpuvHnOgb', opts);
 
 
     // Send the query and handle the response by logging the data
