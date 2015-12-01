@@ -77,7 +77,6 @@
  * @author: Nerissa Lemon
  * @since: Jan 6, 2015
  */
-var libs = libs || {};
 google.load('visualization', '1', {packages: ['corechart']});
 
 google.setOnLoadCallback(vizInit);
@@ -90,18 +89,18 @@ var totals = {};
 var chart;
     // Store the data by creating a google DataTable object with
     // two columns: Month and People Hours.
-    data.addColumn('string', 'Course Level');
-    data.addColumn('number', 'Number of Students');
+    //data.addColumn('string', 'Course Level');
+    //data.addColumn('number', 'Number of Students');
 
     // Add 12 rows to the DataTable, January - December of
     // 2014.
-    data.addRows([
-        ['100', 1760],
-        ['200', 2120],
-        ['300', 698],
-        ['400', 480],
-        ['500', 202],
-      ]);
+    // data.addRows([
+    //     ['100', 1760],
+    //     ['200', 2120],
+    //     ['300', 698],
+    //     ['400', 480],
+    //     ['500', 202],
+    //   ]);
 
     // Set the options for the chart to be drawn.  This include the
     // width, height, title, horizontal axis, vertical axis.  Finally
@@ -131,10 +130,10 @@ function vizInit() {
 chart = new google.visualization.ColumnChart(document.getElementById('ex0'));
 
 
-// 9/19/2015 Corrected typo
+
 // Make the initial query to get the whole Fusion table. The Fusion
 // table’s ID is listed in red.
-var query = "SELECT Month, Year, AY, Sessions FROM 1b7tW8h_6l35B2Pj7DCwfjHjurWzRiI-KpuvHnOgb&pli=1#rows:id=1";
+var query = "SELECT Year, Course Level, Number of Students, AY, Sessions FROM 1b7tW8h_6l35B2Pj7DCwfjHjurWzRiI-KpuvHnOgb";
 
 var opts = {sendMethod: 'auto'};
 var queryObj = new google.visualization.Query('https://www.google.com/fusiontables/DataSource?docid=1b7tW8h_6l35B2Pj7DCwfjHjurWzRiI-KpuvHnOgb&pli=1#rows:id=1', opts);
