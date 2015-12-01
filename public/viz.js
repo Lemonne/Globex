@@ -108,7 +108,7 @@ var options = {
 	title: 'Number of Students Reached'
     },
     legend: {
-	position: 'none'
+	position: 'center'
     }
 };
 
@@ -196,7 +196,7 @@ function vizController(thisYear) {
 		// corresponding to "thisYear".
 		views[thisYear] = new google.visualization.DataView(data);
 
-		views[thisYear].setRows(views[thisYear].getFilteredRows([{column: 2, value: thisYear}]));
+		views[thisYear].setRows(views[thisYear].getFilteredRows([{column: 1, value: thisYear}]));
 
 		// Get a subset of the columns.
 		views[thisYear].setColumns([0, 3]);
