@@ -89,6 +89,8 @@ var totals = {};
 // Define the variable to hold the chart.
 var chart;
 
+var year = [2014, 2015]; //adding this in. can be deleted.
+
 // Set the options for the chart to be drawn.  This include the
 // width, height, title, horizontal axis, vertical axis.  Finally
 // turn off the legend.
@@ -112,24 +114,24 @@ var options = {
 
 function vizInit() {
 
-    // Must wait until the google library is loaded before we
-    // can actually instatiate an object of the DataTable type.
-    data = new google.visualization.DataTable();
-
-    // Store the data by creating a google DataTable object with
-    // two columns: Month and People Hours.
-    data.addColumn('string', 'Course Level');
-    data.addColumn('number', 'Number of Students');
-
-    // Add 12 rows to the DataTable, January - December of
-    // 2014.
-    data.addRows([
-        ['100', 1760],
-        ['200', 2120],
-        ['300', 698],
-        ['400', 480],
-        ['500', 202],
-      ]);
+    // // Must wait until the google library is loaded before we
+    // // can actually instatiate an object of the DataTable type.
+    // data = new google.visualization.DataTable();
+    //
+    // // Store the data by creating a google DataTable object with
+    // // two columns: courseLevel and  number of students.
+    // data.addColumn('string', 'Course Level');
+    // data.addColumn('number', 'Number of Students');
+    // 
+    // // Add 12 rows to the DataTable, January - December of
+    // // 2014.
+    // data.addRows([
+    //     ['100', 1760],
+    //     ['200', 2120],
+    //     ['300', 698],
+    //     ['400', 480],
+    //     ['500', 202],
+    //   ]);
 
     // Create a new viz object using the google API -- specifically,
     // we are going to make a column chart inside the div called ex0
@@ -140,10 +142,10 @@ function vizInit() {
     // 9/19/2015 Corrected typo
     // Make the initial query to get the whole Fusion table. The Fusion
     // table’s ID is listed in red.
-    var query = "SELECT Year, AY, Course Level, Number of Students, Sessions FROM 1b7tW8h_6l35B2Pj7DCwfjHjurWzRiI-KpuvHnOgb";
+    var query = "SELECT Year, AY, Course Level, Number of Students FROM 1b7tW8h_6l35B2Pj7DCwfjHjurWzRiI-KpuvHnOgb";
 
     var opts = {sendMethod: 'auto'};
-    var queryObj = new google.visualization.Query('https://www.google.com/fusiontables/DataSource?docid=1b7tW8h_6l35B2Pj7DCwfjHjurWzRiI-KpuvHnOgb', opts);
+    var queryObj = new google.visualization.Query('https://www.google.com/fusiontables/gvizdata?tq=', opts);
 
 
     // Send the query and handle the response by logging the data
