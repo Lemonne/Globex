@@ -91,6 +91,8 @@ var chart;
 
 var year = [2014, 2015]; //adding this in. can be deleted.
 
+//var year = 2014;
+
 // Set the options for the chart to be drawn.  This include the
 // width, height, title, horizontal axis, vertical axis.  Finally
 // turn off the legend.
@@ -122,7 +124,7 @@ function vizInit() {
     // // two columns: courseLevel and  number of students.
     // data.addColumn('string', 'Course Level');
     // data.addColumn('number', 'Number of Students');
-    // 
+    //
     // // Add 12 rows to the DataTable, January - December of
     // // 2014.
     // data.addRows([
@@ -142,7 +144,8 @@ function vizInit() {
     // 9/19/2015 Corrected typo
     // Make the initial query to get the whole Fusion table. The Fusion
     // table’s ID is listed in red.
-    var query = "SELECT Year, AY, Course Level, Number of Students FROM 1b7tW8h_6l35B2Pj7DCwfjHjurWzRiI-KpuvHnOgb";
+    //var query = "SELECT Year, AY, Course Level, Number of Students FROM 1b7tW8h_6l35B2Pj7DCwfjHjurWzRiI-KpuvHnOgb";
+    var query = "SELECT * FROM 1b7tW8h_6l35B2Pj7DCwfjHjurWzRiI-KpuvHnOgb";
 
     var opts = {sendMethod: 'auto'};
     var queryObj = new google.visualization.Query('https://www.google.com/fusiontables/gvizdata?tq=', opts);
@@ -156,6 +159,7 @@ function vizInit() {
 	    data = e.getDataTable();
 
 	    console.log(data);
+      console.log("AFTER LOG DATA");
 
 	    // Create a view for academic year 2013-2014 that
 	    // is the first two columns of the data, just the
@@ -164,12 +168,16 @@ function vizInit() {
 	    // First, get the textualized range of the year.
 	    var thisYear = "" + year[0] + "-" + year[1];
 
+
+
 	    // Next, create the object and get the rows
 	    // corresponding to "thisYear".
 	    views[thisYear] = new google.visualization.DataView(data);
 
-	    views[thisYear].setRows(views[thisYear].getFilteredRows([{column: 2, value: thisYear}]));
 
+	    views[thisYear].setRows(views[thisYear].getFilteredRows([{column: 1, value: thisYear}]));
+
+      console.log("AFTER ATTEMPT TO USE THISYEAR");
 	    // Get a subset of the columns.
 	    views[thisYear].setColumns([0, 3]);
 
