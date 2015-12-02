@@ -177,9 +177,9 @@ function vizInit() {
 
 	    views[thisYear].setRows(views[thisYear].getFilteredRows([{column: 1, value: thisYear}]));
 
-      console.log("AFTER ATTEMPT TO USE THISYEAR");
+
 	    // Get a subset of the columns.
-	    views[thisYear].setColumns([0, 3]);
+	    views[thisYear].setColumns([2, 3]);
 
 	    // Draw the chart for the initial academic year.
 	    chart.draw(views[thisYear].toDataTable(), options);
@@ -199,7 +199,7 @@ function vizController(thisYear) {
 		views[thisYear].setRows(views[thisYear].getFilteredRows([{column: 1, value: thisYear}]));
 
 		// Get a subset of the columns.
-		views[thisYear].setColumns([0, 3]);
+		views[thisYear].setColumns([2, 3]);
 		}
 
     // Draw the chart for the academic year.
