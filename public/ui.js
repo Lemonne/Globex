@@ -34,13 +34,23 @@ var initialize = function() {
 
 	 // Grab the 'Submit' button element, identified by the
     // 'submit-btn' id.
-    button = document.getElementById('submit-btn');
-
+    var button = document.getElementById('submit-btn');
+	var incr_button = document.getElementById('increase-year');
     // From this point forward, when the button is clicked, the
     // fetch function shall be invoked.
     button.onclick = fetch;
+	incr_button.onclick = increase;
 };
-
+var increase = function(){
+	var input = document.getElementById('year');
+	input = input.toString();
+	console.log(input);
+	var input_value = input.replace("/\d+/", function(val){
+		return parseInt(val) + 1;
+	});
+	console.log(input_value);
+	vizController(input_value);
+}
 var fetch = function() {
 
 	var year_element = document.getElementById('year');

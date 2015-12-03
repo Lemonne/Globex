@@ -17,6 +17,18 @@ div#header p {
 	font-size: 200%;
 	font-weight: bold;
 }
+.delicate-left-space{
+	margin-left:17%;
+}
+.left-space{
+	margin-left: 25%
+}
+input.center{
+	text-align: center;
+}
+label#yearLabel{
+	color: white;
+}
 div#footer {
 	border-top: 2px solid #666;
 	padding: 30px;
