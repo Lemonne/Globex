@@ -35,12 +35,16 @@ var initialize = function() {
 	 // Grab the 'Submit' button element, identified by the
     // 'submit-btn' id.
     var button = document.getElementById('submit-btn');
-	var incr_button = document.getElementById('increase-year');
+	  var incr_button = document.getElementById('increase-year');
+    var decr_button = document.getElementById('decrease-year');
     // From this point forward, when the button is clicked, the
     // fetch function shall be invoked.
     button.onclick = fetch;
-	incr_button.onclick = increase;
+	  incr_button.onclick = increase;
+    decr_button.onclick = decrease;
+
 };
+
 var increase = function(){
   var element = document.getElementById('year');
 	var input = element.value;
@@ -50,14 +54,29 @@ var increase = function(){
     console.log("IT DID NOT MATCH");
     return;
   }
-  console.log("BEFORE CHANGING" + input);
 	var input_value = input.replace(/\d+/g, function(val){
 		return (parseInt(val) + 1).toString();
 	});
-  console.log("AFTER CHANGING" + input_value);
 	vizController(input_value);
   element.value = input_value;
 }
+
+var decrease = function(){
+  var element = document.getElementById('year');
+	var input = element.value;
+
+  var match = input.match(/\d{4}-\d{4}/);
+  if (match == null || match.length != 1){
+    console.log("IT DID NOT MATCH");
+    return;
+  }
+	var input_value = input.replace(/\d+/g, function(val){
+		return (parseInt(val) - 1).toString();
+	});
+	vizController(input_value);
+  element.value = input_value;
+}
+
 var fetch = function() {
 
 	var year_element = document.getElementById('year');

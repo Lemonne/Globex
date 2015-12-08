@@ -51,26 +51,6 @@ var options = {
 
 
 function vizInit() {
-
-    // // Must wait until the google library is loaded before we
-    // // can actually instatiate an object of the DataTable type.
-    // data = new google.visualization.DataTable();
-    //
-    // // Store the data by creating a google DataTable object with
-    // // two columns: courseLevel and  number of students.
-    // data.addColumn('string', 'Course Level');
-    // data.addColumn('number', 'Number of Students');
-    //
-    // // Add 12 rows to the DataTable, January - December of
-    // // 2014.
-    // data.addRows([
-    //     ['100', 1760],
-    //     ['200', 2120],
-    //     ['300', 698],
-    //     ['400', 480],
-    //     ['500', 202],
-    //   ]);
-
     // Create a new viz object using the google API -- specifically,
     // we are going to make a column chart inside the div called ex0
     // in the html file.
