@@ -42,14 +42,21 @@ var initialize = function() {
 	incr_button.onclick = increase;
 };
 var increase = function(){
-	var input = document.getElementById('year');
-	input = input.toString();
-	console.log(input);
-	var input_value = input.replace("/\d+/", function(val){
-		return parseInt(val) + 1;
+  var element = document.getElementById('year');
+	var input = element.value;
+
+  var match = input.match(/\d{4}-\d{4}/);
+  if (match == null || match.length != 1){
+    console.log("IT DID NOT MATCH");
+    return;
+  }
+  console.log("BEFORE CHANGING" + input);
+	var input_value = input.replace(/\d+/g, function(val){
+		return (parseInt(val) + 1).toString();
 	});
-	console.log(input_value);
+  console.log("AFTER CHANGING" + input_value);
 	vizController(input_value);
+  element.value = input_value;
 }
 var fetch = function() {
 
