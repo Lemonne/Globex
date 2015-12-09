@@ -1,6 +1,3 @@
-
-
-
 /*
  * viz.js
  *
@@ -74,8 +71,7 @@ function vizInit() {
 
 	    data = e.getDataTable();
 
-	    console.log(data);
-      console.log("AFTER LOG DATA");
+	    console.log("Data: " + data);
 
 	    // Create a view for academic year 2013-2014 that
 	    // is the first two columns of the data, just the
@@ -108,7 +104,7 @@ function vizController(thisYear) {
 		//if view[thisYear] doesn't exist, create a
 		//dataView object to get the subset of data for the year
 		if((views[thisYear]) == null){
-			// Next, create the object and get the rows
+		// Next, create the object and get the rows
 		// corresponding to "thisYear".
 		views[thisYear] = new google.visualization.DataView(data);
 
@@ -118,6 +114,7 @@ function vizController(thisYear) {
 		views[thisYear].setColumns([2, 3]);
 		}
 
+    console.log("Views[thisYear] : " + views[thisYear].value);  
     // Draw the chart for the academic year.
 	chart.draw(views[thisYear].toDataTable(), options);
     console.log(thisYear);
