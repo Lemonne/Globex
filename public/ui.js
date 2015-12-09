@@ -46,6 +46,8 @@ var initialize = function() {
 };
 
 var increase = function(){
+  var infobox = document.getElementById('info-box');
+  infobox.value = "You pressed:\n\tIncrease";
   var element = document.getElementById('year');
 	var input = element.value;
 
@@ -62,6 +64,8 @@ var increase = function(){
 }
 
 var decrease = function(){
+  var infobox = document.getElementById('info-box');
+  infobox.value = "You pressed:\n\tDecrease";
   var element = document.getElementById('year');
 	var input = element.value;
 

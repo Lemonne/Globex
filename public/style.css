@@ -41,3 +41,6 @@ div#about {
 div#about.show {
     opacity: 1;
 }
+textarea[name=information] {
+  resize: none;
+}
