@@ -1,50 +1,53 @@
 <!DOCTYPE html>
-<!-- <html xmlns="http://www.w3.org/1999/xhtml"> -->
+<!--  ****** <html xmlns="http://www.w3.org/1999/xhtml"> by david -->
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-    <title>Course Level Enumerator</title>
+<title>Course Level Enumerator</title>
 
-    <script type="text/javascript"src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript" src="viz.js" ></script>
-
-    <link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="viz.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 
 <body>
 
- <div id="wrapper">
+	<div id="wrapper">
 
-    <div id="header">
-      <p class="title">What are the number of students being reached by course level?</p>
-      <p>Helping to make our library a better place by illuminating the inconsistencies of course level instruction.</p>
+		<div id="header">
+			<p class="title">What are the number of students being reached by
+				course level?</p><br>
+			<p>Helping to make our library a better place by illuminating the
+				inconsistencies of course level instruction.</p>
 
-    </div>
+		</div>
 
-    <div id="info">
-      <textarea id="info-box" name="information" rows="10" cols="20" disabled></textarea>
-    </div>
+		<div id="info">
+			<textarea id="info-box" name="information" rows="20" cols="30"
+				disabled></textarea>
+		</div>
 
-    <form class="form-inline">
- <div class="left-space"""style="width:50%; margin:0 auto;">
-    <label for="year" id="yearLabel"><span class="left-space">&nbsp;Year:</span></label><br>
+		<form class="form-inline" onSubmit="return fetch()">
+			<div class="left-space" ""style="width: 50%; margin: 0 auto;">
+				<label for="year" id="yearLabel"><span class="left-space">&nbsp;Year:</span></label><br>
 
-	<button type="button" id="decrease-year" class="delicate-left-space">←</button>
-    <input class="center" type="text" id="year" placeholder="2013-2014">
-	<button type="button" id="increase-year" class="btn btn-primary">→</button><br>
-	<span class="left-space"></span>
-	<button type="button" id="submit-btn" class="btn btn-default">Submit</button>
- </div>
+				<button type="button" id="decrease-year" class="delicate-left-space">←</button>
+				<input class="center" type="text" id="year" placeholder="2013-2014">
+				<button type="button" id="increase-year" class="btn btn-primary">→</button>
+				<br> <span class="left-space"></span>
+			</div>
 
-</form>
+		</form>
 
-    <div class="left-space" id="ex0"></div>
+		<div class="left-space" id="ex0"></div>
 
-    <div id="footer"><p>Author: Globex</p></div>
+		<div id="footer">
+			<p>Author: Globex</p>
+		</div>
 
-  </div>
+	</div>
 
-<script type="text/javascript" src="ui.js" ></script>
+	<script type="text/javascript" src="ui.js"></script>
 </body>
 </html>
