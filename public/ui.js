@@ -1,8 +1,8 @@
 /**
  * ui.js
- * 
+ *
  * Defines functionality for instrumenting the user-interface.
- * 
+ *
  */
 var toggle = function() {
 
@@ -61,7 +61,7 @@ var increase = function() {
 }
 
 function test(years) {
-	var json = httpGet("https://dl.dropboxusercontent.com/s/2wblqrkufhpbrjz/info.json");
+	var json = httpGet("https://dl.dropboxusercontent.com/s/fmykhihipxy433h/info.json?dl=0"); //https://dl.dropboxusercontent.com/s/2wblqrkufhpbrjz/info.json
 	return JSON.parse(json)[years];
 }
 
@@ -86,7 +86,7 @@ function fetch() {
 	var year_element = document.getElementById('year');
 	var year_value = year_element.value;
 	var infobox = document.getElementById('info-box');
-	
+
 	var output = "";
 	try {
 		var parsedJSON = test(year_value);
